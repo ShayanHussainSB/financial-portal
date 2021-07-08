@@ -6,9 +6,20 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "axios": "^0.21.1",
+    "dropify": "^0.2.2",
+    "form-data": "^3.0.1",
+    "get-all-country-info": "^1.1.6",
+    "jquery": "^3.6.0",
+    "npm-run-all": "^4.1.5",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-hot-toast": "^2.0.0",
+    "react-input-mask": "^2.0.4",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
+    "react-select": "^4.3.1",
+    "react-tooltip": "^4.2.21",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
@@ -34,5 +45,17 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShayanHussainSB/financial-portal.git"
+  },
+  "author": "Rockstar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShayanHussainSB/financial-portal/issues"
+  },
+  "homepage": "https://github.com/ShayanHussainSB/financial-portal#readme"
 }
