@@ -1,43 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Web site created using create-react-app" />
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <title>Finance Portal</title>
+  <base href="/">
+  <!-- TEMPLATE CSS  -->
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+  <link href="vendor/jqvmap/css/jqvmap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="vendor/chartist/css/chartist.min.css">
+  <link href="css/style.css" rel="stylesheet">
+</head>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+<body id="body">
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="preloader">
+    <div class="sk-three-bounce">
+      <div class="sk-child sk-bounce1"></div>
+      <div class="sk-child sk-bounce2"></div>
+      <div class="sk-child sk-bounce3"></div>
+    </div>
+  </div>
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+  <div id="root"></div>
+
+  <!--Scripts-->
+  <!-- Required vendors -->
+  <script src="js/jquery-3.5.0.min.js"></script>
+  <script src="vendor/global/global.min.js"></script>
+  <script src="vendor/chart.js/Chart.bundle.min.js"></script>
+  <script src="js/custom.min.js"></script>
+  <!-- Apex Chart -->
+  <script src="vendor/apexchart/apexchart.js"></script>
+
+  <!-- Vectormap -->
+  <!-- Chart piety plugin files -->
+  <script src="vendor/peity/jquery.peity.min.js"></script>
+
+  <!-- Chartist -->
+  <script src="vendor/chartist/js/chartist.min.js"></script>
+
+  <!-- Dashboard 1 -->
+  <script src="js/dashboard/dashboard-1.js"></script>
+  <!-- Svganimation scripts -->
+  <script src="vendor/svganimation/vivus.min.js"></script>
+  <script src="js/plugins-init/summernote-init.js"></script>
+  <script src="vendor/svganimation/svg.animation.js"></script>
+
+
+  <script>
+    $(document).ready(function () {
+      $(".nav-control").on('click', function () {
+        $('#main-wrapper').toggleClass("menu-toggle");
+
+        $(".hamburger").toggleClass("is-active");
+      });
+
+      $('.right-sidebar .nav-link').on('click', function () {
+        $('.chatSiteBar').addClass('active');
+      });
+      $('.chatbox-close').on('click', function () {
+        $('.chatSiteBar').removeClass('active');
+      });
+      var direction = getUrlParams('dir');
+      if (direction != 'rtl') { direction = 'ltr'; }
+
+      new dezSettings({
+        typography: "roboto",
+        version: "light",
+        layout: "vertical",
+        headerBg: "color_1",
+        navheaderBg: "color_3",
+        sidebarBg: "color_1",
+        sidebarStyle: "mini",
+        sidebarPosition: "fixed",
+        headerPosition: "fixed",
+        containerLayout: "wide",
+        direction: direction
+      });
+    });
+  </script>
+</body>
+
 </html>
